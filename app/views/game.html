@@ -1,0 +1,22 @@
+<div id="morpion">
+<div class="span3 new_span">
+<div class="row"></div>
+<div class="container">
+  <div class="well col-sm-3" ng-show='ready'>
+    <p>{{currentPlayer}} is Playing</p>
+    <div>
+      <input class="btn-lg col-sm-2" type="button" 
+      ng-repeat="button in morpion" 
+      ng-disabled="!(button.val === '-' && player === currentPlayer)" 
+      ng-model="morpion[$index]"
+      value="{{morpion[$index].val}}"
+      ng-click="cellClick(button);">
+    </div>
+  </div>
+  <div class="well col-sm-3" ng-show='!ready'>
+    <p>Waiting for player</p>
+  </div>
+</div>
+<div class="clr">&nbsp;</div>
+<div class="row"><a href="#" id="reset" class="btn-success btn span3" >Restart</a></div></div>
+</div>
